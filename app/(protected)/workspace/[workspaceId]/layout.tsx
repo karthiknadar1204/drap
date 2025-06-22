@@ -1,7 +1,7 @@
 import { getUserWorkspaces } from "@/app/data/workspace/get-user-workspaces";
 import { Navbar } from "@/components/navbar";
 import { AppSidebarContainer } from "@/components/sidebar/app-sidebar-container";
-import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { redirect } from "next/navigation";
 import React from "react";
 
@@ -24,7 +24,7 @@ const WorkspaceIdLayout = async ({ children, params }: Props) => {
       <div className="w-full flex bg-background h-screen">
         <AppSidebarContainer data={data as any} workspaceId={workspaceId} />
 
-        <SidebarInset>
+        <main className="w-full overflow-y-auto min-h-screen">
           <div className="flex items-start">
             <SidebarTrigger className="pt-3" />
 
@@ -37,7 +37,7 @@ const WorkspaceIdLayout = async ({ children, params }: Props) => {
           </div>
 
           <div className="p-0 md:p-4 pt-2">{children}</div>
-        </SidebarInset>
+        </main>
       </div>
     </SidebarProvider>
   );

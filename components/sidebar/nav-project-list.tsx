@@ -10,7 +10,7 @@ import {
   useSidebar,
 } from "../ui/sidebar";
 import { usePathname } from "next/navigation";
-// import { CreateProjectForm } from "../project/create-project-form";
+import { CreateProjectForm } from "../project/create-project-form";
 
 export const NavProjects = ({
   projects,
@@ -30,7 +30,7 @@ export const NavProjects = ({
             Projects
           </span>
 
-          {/* <CreateProjectForm workspaceMembers={workspaceMembers} /> */}
+          <CreateProjectForm workspaceMembers={workspaceMembers} />
         </SidebarGroupLabel>
 
         <SidebarMenu>
